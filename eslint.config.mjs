@@ -6,10 +6,14 @@ import prettier from "eslint-plugin-prettier/recommended";
 export default tseslint.config(
   {
     files: ["**/*.ts"],
+    languageOptions: {
+      parserOptions: {
+        project: ["./tsconfig.app.json", "./tsconfig.json", "./tsconfig.spec.json"]
+      },
+    },
     extends: [
       eslint.configs.recommended,
-      ...tseslint.configs.recommended,
-      ...tseslint.configs.stylistic,
+      ...tseslint.configs.strictTypeChecked,
       ...angular.configs.tsRecommended,
       prettier,
     ],
