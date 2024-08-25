@@ -6,11 +6,18 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
+      coverage: {
+        enabled: true,
+        thresholds: {
+          branches: 100,
+        },
+        exclude: ["**/index.ts", "main.ts", "app/**"],
+      },
       globals: true,
       setupFiles: ["./src/setup-tests.ts"],
       environment: "jsdom",
       exclude: [...configDefaults.exclude, "e2e/**"],
-      root: fileURLToPath(new URL("./", import.meta.url)),
+      root: fileURLToPath(new URL("./src", import.meta.url)),
     },
   }),
 );
