@@ -3,17 +3,20 @@
   "extends": [
     "eslint:recommended",
     "@vue/eslint-config-typescript",
+    "plugin:@typescript-eslint/strict-type-checked",
     "plugin:vue/vue3-recommended",
     "plugin:cypress/recommended",
     "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
-    "projects": [
+    "parser": "@typescript-eslint/parser",
+    "project": [
       "./tsconfig.json",
       "./tsconfig.app.json",
       "./tsconfig.node.json",
-      "./tsconfig.vitest.json"
+      "./tsconfig.vitest.json",
+      "./cypress/e2e/tsconfig.json"
     ]
   }
 }
