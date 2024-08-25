@@ -19,3 +19,6 @@ jobs:
 
       - name: Restore
         run: npm ci
+
+      - name: Lint
+        run: npm run lint
