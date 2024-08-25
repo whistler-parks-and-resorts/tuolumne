@@ -13,6 +13,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "npx eslint . --fix --max-warnings 1",
+    "lint:styles": "npx stylelint ./**/*.scss --fix",
     "format": "npx prettier . --write"
   },
   "dependencies": {
@@ -47,6 +48,8 @@
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
     "start-server-and-test": "^2.0.4",
+    "stylelint": "^16.8.2",
+    "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "^5.5.4",
     "vite": "^5.3.1",
     "vite-plugin-vue-devtools": "^7.3.1",

@@ -3,6 +3,7 @@
     "bulma",
     "nightwatch",
     "pinia",
+    "stylelint",
     "tsbuildinfo",
     "tuolumne"
   ]
