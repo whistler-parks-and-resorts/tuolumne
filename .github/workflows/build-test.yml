@@ -34,7 +34,7 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         env:
           PUBLISH_PROFILE: ${{ secrets.AZURE_PUBLISH_PROFILE }}
         with:
