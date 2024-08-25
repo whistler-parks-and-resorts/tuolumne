@@ -5,6 +5,8 @@
     "@vue/eslint-config-typescript",
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:vue/vue3-recommended",
+    "plugin:testing-library/vue",
+    "plugin:jest-dom/recommended",
     "plugin:cypress/recommended",
     "plugin:prettier/recommended"
   ],
