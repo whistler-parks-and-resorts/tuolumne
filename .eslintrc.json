@@ -1,0 +1,19 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "@vue/eslint-config-typescript",
+    "plugin:vue/vue3-recommended",
+    "plugin:cypress/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "projects": [
+      "./tsconfig.json",
+      "./tsconfig.app.json",
+      "./tsconfig.node.json",
+      "./tsconfig.vitest.json"
+    ]
+  }
+}
