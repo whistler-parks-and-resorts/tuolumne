@@ -5,9 +5,13 @@ on:
     branches-ignore:
       - master
 
+env:
+  APP_NAME: "app-tuolumne-dev"
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: development
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,3 +32,12 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Deploy
+        uses: azure/webapps-deploy@v2
+        env:
+          PUBLISH_PROFILE: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+        with:
+          app-name: ${{ env.APP_NAME }}
+          package: "dist"
+          publish-profile: ${{ env.PUBLISH_PROFILE }}
