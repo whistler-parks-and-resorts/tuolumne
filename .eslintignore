@@ -1,0 +1,5 @@
+coverage
+src/shims-vue.d.ts
+src/main.ts
+vitest.config.ts
+vite.config.ts
