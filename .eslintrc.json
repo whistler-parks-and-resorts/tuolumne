@@ -1,0 +1,51 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "@vue/eslint-config-typescript",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:promise/recommended",
+    "plugin:sonarjs/recommended-legacy",
+    "plugin:unicorn/recommended",
+    "plugin:compat/recommended",
+    "plugin:vue/vue3-recommended",
+    "plugin:vitest/legacy-recommended",
+    "plugin:jest-extended/all",
+    "plugin:testing-library/vue",
+    "plugin:jest-dom/recommended",
+    "plugin:cypress/recommended",
+    "plugin:jest-formatting/strict",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "project": [
+      "./tsconfig.json",
+      "./tsconfig.app.json",
+      "./tsconfig.node.json",
+      "./tsconfig.vitest.json",
+      "./cypress/e2e/tsconfig.json"
+    ]
+  },
+  "rules": {
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "pascalCase": true
+        }
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.cy.ts"],
+      "rules": {
+        "testing-library/prefer-screen-queries": [0],
+        "testing-library/await-async-queries": [0],
+        "vitest/expect-expect": [0]
+      }
+    }
+  ]
+}

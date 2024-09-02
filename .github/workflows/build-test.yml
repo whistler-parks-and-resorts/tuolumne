@@ -1,0 +1,46 @@
+name: Build & Test
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+env:
+  APP_NAME: "app-tuolumne-dev"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+
+      - name: Restore
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Lint Styles
+        run: npm run lint:styles
+
+      - name: Unit Tests
+        run: npm run test:unit
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: azure/webapps-deploy@v3
+        env:
+          PUBLISH_PROFILE: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+        with:
+          app-name: ${{ env.APP_NAME }}
+          package: "dist"
+          publish-profile: ${{ env.PUBLISH_PROFILE }}
