@@ -11,7 +11,13 @@ export default mergeConfig(
         thresholds: {
           branches: 100,
         },
-        exclude: ["**/index.ts", "main.ts", "app/**"],
+        exclude: [
+          "**/index.ts",
+          "main.ts",
+          "app/**",
+          "**/*.harness.vue",
+          "**/*.container.vue",
+        ],
       },
       globals: true,
       setupFiles: ["./src/SetupTests.ts"],
