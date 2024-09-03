@@ -1,8 +1,8 @@
 <template>
   <h3>Add Attraction</h3>
-  <div>
+  <form>
     <TextInput :input="name" placeholder="Attraction Name:" />
-  </div>
+  </form>
 </template>
 
 <script setup lang="ts">
