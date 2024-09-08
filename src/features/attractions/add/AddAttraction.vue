@@ -1,18 +1,26 @@
 <template>
   <h3>Add Attraction</h3>
-  <form>
+  <InputForm
+    legend="Attraction Info"
+    :disable-submit="false"
+    :submit="handleSubmit"
+  >
     <TextInput :input="name" placeholder="Attraction Name:" />
-  </form>
+  </InputForm>
 </template>
 
 <script setup lang="ts">
-import { TextInput, useTextInput } from "@/components";
+import { InputForm, TextInput, useTextInput } from "@/components";
 
-defineProps<AddAttractionProperties>();
+const properties = defineProps<AddAttractionProperties>();
 
 export interface AddAttractionProperties {
   addAttraction: (name: string) => Promise<void>;
 }
 
 const name = useTextInput();
+
+const handleSubmit = (): void => {
+  void properties.addAttraction(name.state.value);
+};
 </script>

@@ -1,3 +1,4 @@
+import attractionRoutes from "@/features/attractions/common/Attractions.Routes";
 import HomeView from "@/features/home/HomeView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -9,6 +10,7 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
+    ...attractionRoutes(),
   ],
 });
 
