@@ -36,6 +36,12 @@
           "pascalCase": true
         }
       }
+    ],
+    "unicorn/consistent-function-scoping": [
+      "error",
+      {
+        "checkArrowFunctions": false
+      }
     ]
   },
   "overrides": [

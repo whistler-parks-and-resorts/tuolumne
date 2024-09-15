@@ -13,6 +13,7 @@ dist
 dist-ssr
 coverage
 *.local
+swagger
 
 /cypress/videos/
 /cypress/screenshots/

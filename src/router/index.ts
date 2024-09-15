@@ -1,4 +1,4 @@
-import attractionRoutes from "@/features/attractions/common/Attractions.Routes";
+import attractionRoutes from "@/features/attractions/common/Attractions.routes";
 import HomeView from "@/features/home/HomeView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
